@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Physics</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+        <script src="scripts.js"></script>
+        <style>
+            #areaToRender {
+                width: screen;
+                height: auto;
+            }
+            #actionArea {
+                width: screen;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body onload='init()'>
+        <div id="areaToRender" onclick="StartBoxes()">
+        </div>
+        <!--
+        <div id="actionArea">
+            <button onclick="StartBoxes()">Boxes falling</button>
+            <button onclick="StartBalloon()">Balloon</button>
+            <button onclick="StartBalloonWithString()">Balloon with string</button>
+            <button onclick="CutTheRope()">Cut the rope</button>
+            <button onclick="StartSlingshot()">Sling shot</button>
+        </div>
+        -->
+    </body>
+</html>
