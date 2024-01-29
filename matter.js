@@ -24,13 +24,31 @@ var render = Render.create({
   }
 });
 
-// create two boxes and a ground
-// var boxA = Bodies.rectangle(400, 200, 80, 80);
-// var boxB = Bodies.rectangle(450, 50, 80, 80);
+// START OWN CODE
 
-for (let i = 0; i < 5; i++) {
-  let circle = Bodies.circle(i, 10, 30, {
-    friction: 0.3,
+//Ball Parcour
+var box1 = Bodies.rectangle(100, 200, 300, 20, {
+    isStatic: true,
+    angle: degreesToRadians(20), // 45 degree angle
+});
+var box2 = Bodies.rectangle(400, 400, 300, 20, {
+    isStatic: true,
+    angle: degreesToRadians(10),
+    restitution: 1 // make it extra bouncy
+});
+
+Composite.add(engine.world, [box1, box2]);
+
+//Degree Converter
+function degreesToRadians(degrees) {
+    return degrees * (Math.PI / 180);
+}
+
+// END OWN CODE
+
+for (let i = 0; i < 25; i++ ) {
+  let circle = Bodies.circle(0, 10, 20, {
+    friction: 0.1,
     frictionAir: 0.00001,
     restitution: 0.8
   });
