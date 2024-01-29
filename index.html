@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Physics</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
-        <script src="scripts.js"></script>
+        <!--<script src="scripts.js"></script>-->
+        
         <style>
             #areaToRender {
                 width: screen;
@@ -16,12 +17,23 @@
                 width: screen;
                 height: auto;
             }
+
+            #matter-container {
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+            }
         </style>
     </head>
-    <body onload='init()'>
-        <div id="areaToRender" onclick="StartBoxes()">
+    <body> <!-- onload='init()'-->
+        
+        <div id="matter-container" class="">
+
         </div>
         <!--
+        <div id="areaToRender" onclick="StartBoxes()">
+        </div>
+        
         <div id="actionArea">
             <button onclick="StartBoxes()">Boxes falling</button>
             <button onclick="StartBalloon()">Balloon</button>
@@ -30,5 +42,6 @@
             <button onclick="StartSlingshot()">Sling shot</button>
         </div>
         -->
+        <script src="matter.js"></script>
     </body>
 </html>
