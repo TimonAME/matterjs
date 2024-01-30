@@ -1,5 +1,5 @@
 const matterContainer = document.querySelector("#matter-container");
-const THICCNESS = 60;
+const THICCNESS = 400;
 
 // module aliases
 var Engine = Matter.Engine,
@@ -24,22 +24,24 @@ var render = Render.create({
   }
 });
 
-// START OWN CODE
+// render balls
+let numberOfBalls = 200;
+let ballSize = 20;
+let delay = ballSize*2;
 
-//Degree Converter
-function degreesToRadians(degrees) {
-    return degrees * (Math.PI / 180);
-}
-
-// END OWN CODE
-
-for (let i = 0; i < 25; i++ ) {
-  let circle = Bodies.circle(0, 10, 20, {
-    friction: 0.1,
-    frictionAir: 0.00001,
-    restitution: 0.8
-  });
-  Composite.add(engine.world, circle);
+for (let i = 0; i < numberOfBalls; i++ ) {
+  ((index) => {
+    setTimeout(() => {
+      // Random number between -20 and +20
+      let random = Math.floor(Math.random() * 60) - 30;
+      let circle = Bodies.circle(matterContainer.clientWidth / 2 + random, 10, ballSize, {
+        friction: 0.1,
+        frictionAir: 0.00001,
+        restitution: 0.8
+      });
+      Composite.add(engine.world, circle);
+    }, index * delay);
+  })(i);
 }
 
 var ground = Bodies.rectangle(
