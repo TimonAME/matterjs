@@ -26,19 +26,6 @@ var render = Render.create({
 
 // START OWN CODE
 
-//Ball Parcour
-var box1 = Bodies.rectangle(100, 200, 300, 20, {
-    isStatic: true,
-    angle: degreesToRadians(20), // 45 degree angle
-});
-var box2 = Bodies.rectangle(400, 400, 300, 20, {
-    isStatic: true,
-    angle: degreesToRadians(10),
-    restitution: 1 // make it extra bouncy
-});
-
-Composite.add(engine.world, [box1, box2]);
-
 //Degree Converter
 function degreesToRadians(degrees) {
     return degrees * (Math.PI / 180);
