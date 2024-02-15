@@ -25,8 +25,8 @@ var render = Render.create({
 });
 
 // render balls
-let numberOfBalls = 200;
-let ballSize = 20;
+let numberOfBalls = 150;
+let ballSize = 25;
 let delay = ballSize*2;
 
 for (let i = 0; i < numberOfBalls; i++ ) {
